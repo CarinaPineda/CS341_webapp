@@ -1,0 +1,117 @@
+<!-- @author Carina Pineda -->
+<!-- External Citation: mainly looked everything up on www.w3schools.com :) -->
+
+<!DOCTYPE html>
+
+<html>
+	
+<head>
+<!--links the css page -->
+<link rel="stylesheet" href="stylesheets/indexStyle.css"> 
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"/>
+</script>
+
+<script> src ="javascripts/scriptFunction.js" </script>
+
+<!--header-->
+<h1>Cheesecake Order Form</h1>
+</head>
+<body>
+
+
+
+	<!--import the cheesecake image-->
+	<img src="https://upload.wikimedia.org/wikipedia/commons/9/9c/Mondays_at_Il_Forno_-_Cheesecake_with_strawberry_sauce.jpg" alt="W3Schools.com" width="200” height="300">
+
+<!--Hold Labels for modification 1-->
+<label id = "ThankyouMessage"></label>
+<label id = "OrderQuantity"></label>
+<label id = "OrderTopping"></label>
+<label id = "OrderNotes"></label>
+
+
+<!--will put the quantity and toppings into a table -->
+<table id="toppingTable">
+     <tr>
+	<td>
+		Quantity   
+	</td>
+	<td>
+		Topping
+	</td>
+     </tr>
+	<tr>
+	<td>	 <!--the options in the drop down -->
+		<select name="quantity" id=“quantity”>
+		<option value=“One”>1</option>
+		<option value=“Two”>2</option>
+		<option value=“Three”>3</option>
+		<option value=“Four”>4</option>
+		</select>
+	</td>
+
+
+	<td>
+		<!--how to make the radio buttons on the side -->
+		<input type = "radio" id="radioTop" name = "Flavor" value="Plain"
+		<label for = "Plain">Plain</label><br>
+
+		<input type = "radio" id="radioTop" name = "Flavor" value="Cherry"
+		<label for = "Cherry">Cherry</label><br>
+
+		<input type = "radio" id="radioTop" name = "Flavor" value="Chocolate"
+		<label for = "Chocolate">Chocolate</label><br>
+	</td>
+     </tr>
+</table>
+
+<!--notes label -->
+<label for="Notes">Notes:</label>
+<br>
+
+<!--creates the textbox, have to set the rows, cols and what you want inside -->
+<textarea id="Notes" name="Notes" rows="4" cols="50" placeholder = "Enter any special instructions here."></textarea>
+   <br><br> <!--spacing -->
+
+<!--creating the order button -->
+<button id="OrderButton">Order</button>
+
+<table id="MonthTable">
+	<tr>
+   <td>
+		<!--secondary header-->
+		<h2>Orders for </h2>
+   </td>
+   <td>
+	   <!-- This is how we create the hover dropdown menu 
+		External Citation: https://www.w3schools.com/howto/howto_css_dropdown.asp-->
+	 	<div class="dropdown">
+			<button class="dropbtn">Jan</button>
+			<div class="dropdown-content">
+			  <a href="#">Jan</a>
+			  <a href="#">Feb</a>
+			  <a href="#">Mar</a>
+			  <a href="#">Apr</a>
+			  <a href="#">May</a>
+			  <a href="#">Jun</a>
+			  <a href="#">Jul</a>
+			  <a href="#">Aug</a>
+			  <a href="#">Sep</a>
+			  <a href="#">Oct</a>
+			  <a href="#">Nov</a>
+			  <a href="#">Dec</a>
+			</div>
+		  </div>
+   </td>
+	</tr>
+</table>
+
+	<!-- Bullet pointed list -->
+    <ul>
+ 	<li>11 cherry</li>
+  	<li>17 chocolate</li>
+  	<li>31 plain</li>
+    </ul>
+
+</body>
+</html> <!--done-->
