@@ -1,3 +1,7 @@
+/*Carina Pineda 
+Feb 28, 2020
+*/
+
 /* Making the $(document).ready(function))
 External Citation: https://stackoverflow.com/questions/12093192/how-to-create-a-jquery-f
 unction-a-new-jquery-method-or-plugin*/
@@ -12,6 +16,23 @@ function monthClicked(){
 	https://stackoverflow.com/questions/42685968/how-to-replace-a-buttons
 	-text-with-a-list-item-text-using-jquery */
 	$(".dropbtn:first-child").html($(this).text());
+
+	//get my data array from the json file 
+	$.post("/orders", {}, function(data,status){
+		var i=0;
+		//loops through my data array 
+		while(i<3){
+			var liID = "list" + i;
+			var quantity = data[i].quantity;
+			var topping = data[i].topping;
+			
+			//converts/parses data to the li 
+			converted = JSON.stringify(quantity + " " + topping);
+			parse = JSON.parse(converted);
+			document.getElementById(liID).innerHTML = parse;
+			i++;
+		}
+	});
 }
 function areyouvegan(){
 
