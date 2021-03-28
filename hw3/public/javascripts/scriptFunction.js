@@ -51,15 +51,18 @@ function areyouvegan(){
 		$("#Notes").hide(); 
 		$("#OrderButton").hide();
 		$('label').hide();
-		
-		//do another post request 
-		$.post("/neworder", {quantity: dropDownQuantity,toppings: dropDownToppings,notes: textAreaContents}, function(data,status){
+
 
 			//replace my empty labels with its variables and the thank you message 
 			$("#ThankyouMessage").replaceWith("<h3> Thank you! Your order has been placed.<br> Order Details: </h3>");
 			$("#OrderQuantity").replaceWith("Quantity: 3" + dropDownQuantity + "<br>");
 			$("#OrderTopping").replaceWith("Toppings: " + dropDownToppings + "<br>");
 			$("#OrderNotes").replaceWith("Notes:<br>" + textAreaContents);
+		
+		//do another post request 
+		$.post("/neworder", {quantity: dropDownQuantity,toppings: dropDownToppings, notes: textAreaContents}, function(data,status){
+
+	
 	
 
 		});
