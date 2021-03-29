@@ -1,5 +1,5 @@
 /* Carina Pineda 
-March 8 2021*/
+March 28 2021*/
 
 var createError = require('http-errors');
 var express = require('express');
@@ -7,6 +7,8 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
+
+//added rouders
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var ordersRouter = require('./routes/orders');
@@ -23,10 +25,11 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+//send all requests to the router
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/orders', ordersRouter);
-app.use('/neworder', newOrdersRouter); //send all requests to that router
+app.use('/neworder', newOrdersRouter); 
 
 
 // catch 404 and forward to error handler

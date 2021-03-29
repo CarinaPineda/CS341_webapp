@@ -1,5 +1,5 @@
 /* Carina Pineda 
-March 8 2021*/
+March 28 2021*/
 
 
 /* Making the $(document).ready(function))
@@ -61,10 +61,6 @@ function areyouvegan(){
 		
 		//do another post request 
 		$.post("/neworder", {quantity: dropDownQuantity,toppings: dropDownToppings, notes: textAreaContents}, function(data,status){
-
-	
-	
-
 		});
 	
 
